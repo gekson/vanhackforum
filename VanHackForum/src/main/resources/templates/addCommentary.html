@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add student</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"/>
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" />
+    
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+	<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" ></script>
+	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" ></script>
+	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+	
+</head>
+<body>
+<div class="container">
+  <h1>New Commentary</h1>
+	<div class="col-md-4">
+		<form th:object="${commentary}" action="/commentary/save" method="post">
+			<div class="form-group">						
+				<textarea th:field="*{description}" class="form-control" rows="5"
+					placeholder="Description" />	
+				<input type="hidden" name="postId" th:field="*{postId}"/>			
+				<div style="clear: both; display: block; height: 10px;"></div>			
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="submit" class="btn btn-primary" value="Save"></input>
+			</div>	
+		</form>
+	</div>
+</div>
+	
+</body>
+</html>
